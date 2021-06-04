@@ -1,0 +1,778 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mammys freezer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "checkFoodAgeGeneral",
+          "slots": [],
+          "samples": [
+            "can i check the oldest items in my freezer",
+            "what is the oldest food in my freezer",
+            "which items have been in my freezer the longest"
+          ]
+        },
+        {
+          "name": "checkDrawerContents",
+          "slots": [
+            {
+              "name": "drawer",
+              "type": "freezer_drawers"
+            }
+          ],
+          "samples": [
+            "what do I have in {drawer}",
+            "what is in {drawer}"
+          ]
+        },
+        {
+          "name": "checkItemQty",
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "samples": [
+                "sorry i meant {food_item}",
+                "the food item is {food_item}"
+              ]
+            }
+          ],
+          "samples": [
+            "what do I have left of {food_item}",
+            "how many of {food_item} do I have",
+            "how much of {food_item} do I have left"
+          ]
+        },
+        {
+          "name": "locateFood",
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "samples": [
+                "i am looking for {food_item}",
+                "sorry the food item is {food_item}"
+              ]
+            }
+          ],
+          "samples": [
+            "where can i find {food_item}",
+            "do i have any {food_item} in my freezer",
+            "where is {food_item} in my freezer",
+            "which drawer is {food_item} in"
+          ]
+        },
+        {
+          "name": "selectFoodItem",
+          "slots": [
+            {
+              "name": "food_option",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{food_option}",
+                "option {food_option}",
+                "select option {food_option}"
+              ]
+            }
+          ],
+          "samples": [
+            "option {food_option}",
+            "food number {food_option} please",
+            "please select option  {food_option}"
+          ]
+        },
+        {
+          "name": "moveFoodItem",
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "samples": [
+                "it is {food_name}",
+                "{food_name}"
+              ]
+            },
+            {
+              "name": "from_location",
+              "type": "freezer_drawers",
+              "samples": [
+                "move it from {from_location}",
+                "{from_location}"
+              ]
+            },
+            {
+              "name": "to_location",
+              "type": "freezer_drawers",
+              "samples": [
+                "{to_location}"
+              ]
+            }
+          ],
+          "samples": [
+            "i need to move {food_name} to {to_location} from {from_location}",
+            "can i move {food_name} to {to_location} from {from_location}",
+            "move {food_name} from {from_location} to {to_location}"
+          ]
+        },
+        {
+          "name": "addFoodItem",
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "samples": [
+                "I said {food_item}",
+                "it\u0027s {food_item}",
+                "{food_item}"
+              ],
+              "multipleValues": {
+                "enabled": false
+              }
+            },
+            {
+              "name": "drawer",
+              "type": "freezer_drawers",
+              "samples": [
+                "can i have it in {drawer} please ",
+                "put it in {drawer} ",
+                "{drawer}",
+                "i want it in {drawer}"
+              ]
+            },
+            {
+              "name": "item_qty",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "second_item",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "second_qty",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "third_item",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "third_qty",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "add {food_item} {second_item} and {third_item} to {drawer}",
+            "put {food_item} quantity {item_qty} items {second_item} quantity {second_qty} items and {third_item} quantity {third_qty} items in {drawer}",
+            "add {item_qty} {food_item}  and {second_qty} {second_item} to {drawer}",
+            "put {food_item} and {second_item} in {drawer}",
+            "add {food_item} and {second_item} to {drawer}",
+            "can you put {item_qty} {food_item} in {drawer}",
+            "place {item_qty} {food_item} in {drawer}",
+            "{item_qty} {food_item} in {drawer}",
+            "put {food_item} in {drawer}",
+            "add {food_item} to {drawer}"
+          ]
+        },
+        {
+          "name": "deleteFoodItem",
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "samples": [
+                "select {food_name}",
+                "{food_name} please",
+                "{food_name}",
+                "i selected {food_name}"
+              ]
+            },
+            {
+              "name": "from_location",
+              "type": "freezer_drawers",
+              "samples": [
+                "{from_location} please",
+                "I meant {from_location}",
+                "select {from_location}",
+                "{from_location}"
+              ]
+            }
+          ],
+          "samples": [
+            "please take out {food_name} from {from_location}",
+            "get rid of {food_name} from {from_location}",
+            "delete {food_name} from {from_location}",
+            "can you remove {food_name} from {from_location}",
+            "take out {food_name} from {from_location}",
+            "from {from_location} can you take out {food_name}",
+            "remove {food_name} from {from_location}"
+          ]
+        },
+        {
+          "name": "updateItemQty",
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "samples": [
+                "select {food_name}",
+                "{food_name}",
+                "The food is {food_name}"
+              ]
+            },
+            {
+              "name": "drawer",
+              "type": "freezer_drawers",
+              "samples": [
+                "i meant {drawer}",
+                "selec t {drawer}",
+                "{drawer}",
+                "I want {drawer}"
+              ]
+            },
+            {
+              "name": "item_qty",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{food_name} in {drawer} update quantity to {item_qty}",
+            "change {food_name} in {drawer} to {item_qty}",
+            "change the quantity of {food_name} in {drawer} to {item_qty}",
+            "update the quantity of {food_name} in {drawer} to {item_qty}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "7",
+              "name": {
+                "value": "bottom drawer",
+                "synonyms": [
+                  "seventh drawer",
+                  "drawer seven",
+                  "last drawer"
+                ]
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "second from bottom",
+                "synonyms": [
+                  "one from bottom",
+                  "sixth drawer",
+                  "drawer six"
+                ]
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "big box 2",
+                "synonyms": [
+                  "big box two",
+                  "Big Box 2",
+                  "drawer five",
+                  "fifth drawer"
+                ]
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "big box 1",
+                "synonyms": [
+                  "big box one",
+                  "fourth drawer",
+                  "drawer four",
+                  "Big Box 1"
+                ]
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "third from top",
+                "synonyms": [
+                  "third from the top",
+                  "third drawer",
+                  "drawer three"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "second from the top",
+                "synonyms": [
+                  "second from top",
+                  "drawer two",
+                  "second drawer"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "top drawer",
+                "synonyms": [
+                  "first drawer",
+                  "drawer one"
+                ]
+              }
+            }
+          ],
+          "name": "freezer_drawers"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "locateFood",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1396102603949.763416488831"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "checkItemQty",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1328747091668.1043840499571"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "selectFoodItem",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1094296558677"
+          },
+          "slots": [
+            {
+              "name": "food_option",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1325908139595.1054202370725"
+              }
+            }
+          ]
+        },
+        {
+          "name": "moveFoodItem",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1318847764446.1500265783773"
+              }
+            },
+            {
+              "name": "from_location",
+              "type": "freezer_drawers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1318847764446.397304543363"
+              }
+            },
+            {
+              "name": "to_location",
+              "type": "freezer_drawers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.627827570367.1036320484780"
+              }
+            }
+          ]
+        },
+        {
+          "name": "addFoodItem",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_item",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1160329807076.324939266503"
+              }
+            },
+            {
+              "name": "drawer",
+              "type": "freezer_drawers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1160329807076.477023732275"
+              }
+            },
+            {
+              "name": "item_qty",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "second_item",
+              "type": "AMAZON.Food",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "second_qty",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "third_item",
+              "type": "AMAZON.Food",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "third_qty",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "deleteFoodItem",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.810458655733.146889842691"
+              }
+            },
+            {
+              "name": "from_location",
+              "type": "freezer_drawers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.810458655733.103505746449"
+              }
+            }
+          ]
+        },
+        {
+          "name": "updateItemQty",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "food_name",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.390879901322.1263912369809"
+              }
+            },
+            {
+              "name": "drawer",
+              "type": "freezer_drawers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.390879901322.969031754635"
+              }
+            },
+            {
+              "name": "item_qty",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1468165254824.842633088347",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which food item did you mean"
+          },
+          {
+            "type": "PlainText",
+            "value": "can you confirm which food item i am looking for"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1396102603949.763416488831",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you clarify the food item you are searching for"
+          },
+          {
+            "type": "PlainText",
+            "value": "can you tell me which food item you are referring to"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1328747091668.1043840499571",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which food item did you mean"
+          },
+          {
+            "type": "PlainText",
+            "value": "which food item are you referring to"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1094296558677",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "right, i have picked {food_option} is this ok?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I have selected option {food_option}  is this correct?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.627827570367.1036320484780",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "sorry where is the item being moved to"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch where you are moving the food to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1318847764446.1500265783773",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you tell me the name of the food item to fulfill this request?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the name of the food item.  Can you repet it for me please?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1318847764446.397304543363",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you tell me the location we are moving the food from"
+          },
+          {
+            "type": "PlainText",
+            "value": "where are you moving this from?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1325908139595.1054202370725",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you tell me the option you want please?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the option.  can you repeat it for me please?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1160329807076.324939266503",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I missed the food you wanted to put in your freezer can you repeat the name please?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the name of the food items can you repeat that?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1160329807076.477023732275",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I need the name of the freezer drawer to carry out this request. can you tell me?"
+          },
+          {
+            "type": "PlainText",
+            "value": "can you tell me the freezer drawer?"
+          },
+          {
+            "type": "PlainText",
+            "value": "i missed the drawer you wanted this in. can you tell me please?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.810458655733.146889842691",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the name of the food you wanted?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the name of the food you wanted. Can you let me know?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I missed the name of the item you wanted to remove.  Can you tell me?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.810458655733.103505746449",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you tell me the name of the drawer please?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I missed which drawer you said. please let me know "
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the freezer drawer. can you tell me?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.390879901322.1263912369809",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please tell me the name oof the food"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which food item needs updating?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I didn\u0027t catch the name fo the item you wanted to update.  can you tell me?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.390879901322.969031754635",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "i didn\u0027t catch the name of the drawer please tell me"
+          },
+          {
+            "type": "PlainText",
+            "value": "which drawer did you mean"
+          },
+          {
+            "type": "PlainText",
+            "value": "from which drawer?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "24"
+}

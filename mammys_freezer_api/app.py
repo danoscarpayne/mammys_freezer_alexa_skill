@@ -3,6 +3,8 @@
 import pandas as pd
 import numpy as np
 
+import os
+
 
 from sqlalchemy import create_engine
 
@@ -14,7 +16,8 @@ import json
 from datetime import datetime, date
 from dateutil.relativedelta import *
 
-con_url = 'postgresql://kvofwgoepabkir:31da4c48a8799ea4fb77248112f24e169cf4d87b912e2f3cde929dfc4c732f93@ec2-79-125-30-28.eu-west-1.compute.amazonaws.com:5432/djkug1lfqo41t'
+# postgres uri
+con_url = os.environ.get('POSTGRES_URI')
 
 engine = create_engine(con_url)
 
